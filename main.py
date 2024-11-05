@@ -1,16 +1,9 @@
-#2. Desarrolle el código fuente de un programa que permita calcular el área de un triángulo equilátero,
-#  adicional visualizar `"DATOS NO VÁLIDOS"`, # si el área es mayor a 1000.
-#
-#   La fórmula para calcular el área `A` de un triángulo equilátero de lado `a` es:
-#
-#
-#   ![](https://i.ibb.co/PTy9hV9/image.png)
-#
-#   **Explicación**:
-#
-#   - Un triángulo equilátero tiene todos sus lados iguales, y sus ángulos interiores son todos de 60 grados.
-#   - Esta fórmula se deriva usando trigonometría y geometría básica aplicadas a un triángulo equilátero.
-#
+#Desarrolle un programa que solicite ingrese tres voltajes 
+#distintos e indique si el promedio de los voltajes ingresados 
+#es menor a 115 visualice `"VOLTAJE CORRECTO"`, caso contrario sea
+#mayor a 115 y menor a 220 visualice `"ALTO VOLTAJE"`, y si es mayor 
+#a 220 visualice `"PELIGRO"`.
+   
 import math     
 
 print(f""" 
@@ -22,28 +15,26 @@ print(f"""
  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝                                                        
                                 """) 
 name = input("    Hello, please enter your full name:  ")
-
 while True:
 
     print(f""" \n
-        Welcome back Mr/Ms {name}, this is a program to calculate the area of a equilateral triangle based on 1 side: \n
-        """) 
+        Welcome back Mr/Ms {name}, this is a program to calculate danger for the voltage average for 3 values of voltage: \n 
+         """) 
     try :    
-        side =   float(input("        Enter the side of the triangle = "))
 
-        if side > 0:
-            
-            area = ((math.sqrt(3))/4) * (math.pow(side,2))
-
-            if area > 1000: 
-                print("        NO VALID DATA")
-            else:
-                print(f"        {round(area,4)}") 
-
-        else:
-            print("\n        Positive numbers only")
-
+        vOne =   float(input("        V1 =: "))
+        vTwo =   float(input("        V2 =: "))
+        vThree = float(input("        V3 =: "))
         
+
+        totalV = (vOne + vTwo + vThree )/3
+        print(f"""\n        Your final average voltage is: {totalV}""")
+        if totalV >= 220:
+            print("\n        DANGER")
+        elif totalV > 115 and totalV < 220:
+            print("\n        HIGH VOLTAGE")
+        else:
+            print("\n        Correct Voltage")
         continueAsk = input( "\n    Do you want to calculate again? (yes/no): " ).strip().lower()
 
         if continueAsk != "yes" :
@@ -56,8 +47,8 @@ while True:
 
         if continueAsk != "yes" :
                 print("    Thaks for using the program. Goodbye!")
-                break
-     
-     
-     
-        #last line of code
+                break 
+        
+        
+        
+                #last line of code   
