@@ -1,6 +1,18 @@
-#1. Desarrolle el código fuente de un programa que permita ingresar cinco voltajes
-# , obtener su promedio y visualizar `"ALTO VOLTAJE"`, si su promedio es mayor a 220,
-#  caso contrario sea menor mostrar `"VOLTAJE CORRECTO"`.
+#2. Desarrolle el código fuente de un programa que permita calcular el área de un triángulo equilátero,
+#  adicional visualizar `"DATOS NO VÁLIDOS"`, # si el área es mayor a 1000.
+#
+#   La fórmula para calcular el área `A` de un triángulo equilátero de lado `a` es:
+#
+#
+#   ![](https://i.ibb.co/PTy9hV9/image.png)
+#
+#   **Explicación**:
+#
+#   - Un triángulo equilátero tiene todos sus lados iguales, y sus ángulos interiores son todos de 60 grados.
+#   - Esta fórmula se deriva usando trigonometría y geometría básica aplicadas a un triángulo equilátero.
+#
+import math     
+
 print(f""" 
 ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
 ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
@@ -10,36 +22,38 @@ print(f"""
  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝                                                        
                                 """) 
 name = input("    Hello, please enter your full name:  ")
+
 while True:
-   
+
     print(f""" \n
-        Welcome back Mr/Ms {name}, this is a program to calculate the voltage average for 5 values of voltage: \n 
+        Welcome back Mr/Ms {name}, this is a program to calculate the area of a equilateral triangle based on 1 side: \n
         """) 
     try :    
+        side =   float(input("        Enter the side of the triangle = "))
+
+        if side > 0:
             
-        vOne =   float(input("        V1 =: "))
-        vTwo =   float(input("        V2 =: "))
-        vThree = float(input("        V3 =: "))
-        vFour =  float(input("        V4 =: "))
-        vFive =  float(input("        V5 =: "))
-        
-        
-        totalV = (vOne + vTwo + vThree + vFour + vFive)/5
-        print(f"""        Your final average voltage is: {totalV}\n""")
-        if totalV > 220:
-            print("\n        HIGH VOLTAGE")
+            area = ((math.sqrt(3))/4) * (math.pow(side,2))
+
+            if area > 1000: 
+                print("        NO VALID DATA")
+            else:
+                print(f"        {round(area,4)}") 
+
         else:
-            print("\n        Correct Voltage")
-        continueAsk = input( "\n    Do you want to calculate again? (yes/no): " ).strip().lower()
+            print("\n        Positive numbers only")
+
         
+        continueAsk = input( "\n    Do you want to calculate again? (yes/no): " ).strip().lower()
+
         if continueAsk != "yes" :
                 print("    Thaks for using the program. Goodbye!")
                 break
     except :            
-        
+
         print("        Error: Enter the correct data")
         continueAsk = input( "\n    Do you want to calculate again? (yes/no): " ).strip().lower()
-        
+
         if continueAsk != "yes" :
                 print("    Thaks for using the program. Goodbye!")
                 break
