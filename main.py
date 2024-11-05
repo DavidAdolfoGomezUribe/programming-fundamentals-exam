@@ -1,9 +1,9 @@
-#Desarrolle un programa que solicite ingrese tres voltajes 
-#distintos e indique si el promedio de los voltajes ingresados 
-#es menor a 115 visualice `"VOLTAJE CORRECTO"`, caso contrario sea
-#mayor a 115 y menor a 220 visualice `"ALTO VOLTAJE"`, y si es mayor 
-#a 220 visualice `"PELIGRO"`.
-   
+#Desarrolle el código fuente de un programa que permita ingresar y
+#leer el valor correspondiente a una distancia en metros y la visualice expresadas en km.
+#
+#Para convertir `metros` a `kilómetros`, puedes usar la siguiente fórmula:
+#
+
 import math     
 
 print(f""" 
@@ -18,23 +18,17 @@ name = input("    Hello, please enter your full name:  ")
 while True:
 
     print(f""" \n
-        Welcome back Mr/Ms {name}, this is a program to calculate danger for the voltage average for 3 values of voltage: \n 
+        Welcome back Mr/Ms {name}, this is a program to convert meters to kilometers: \n 
          """) 
     try :    
 
-        vOne =   float(input("        V1 =: "))
-        vTwo =   float(input("        V2 =: "))
-        vThree = float(input("        V3 =: "))
+        meters =   float(input("        Please enter the amount of meters : "))
         
+        
+        kilometers = meters/1000
+        print(f"""\n        For this amount of {meters} meters, the kilometers are: {kilometers} Km""")
 
-        totalV = (vOne + vTwo + vThree )/3
-        print(f"""\n        Your final average voltage is: {totalV}""")
-        if totalV >= 220:
-            print("\n        DANGER")
-        elif totalV > 115 and totalV < 220:
-            print("\n        HIGH VOLTAGE")
-        else:
-            print("\n        Correct Voltage")
+
         continueAsk = input( "\n    Do you want to calculate again? (yes/no): " ).strip().lower()
 
         if continueAsk != "yes" :
@@ -47,8 +41,8 @@ while True:
 
         if continueAsk != "yes" :
                 print("    Thaks for using the program. Goodbye!")
-                break 
-        
-        
-        
-                #last line of code   
+                break                  
+       
+      
+      
+        #last line of code  
